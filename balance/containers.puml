@@ -9,10 +9,10 @@ System_Ext(payment_gateway, "Payment Gateway", "Payment Processor")
 
 System_Boundary(digital_wallet, "Digital Wallet") {
   Container(spa, "SPA", "React", "Digital Wallet Web App")
-  Container(wallet_core, "Wallet Core", "Typescrit", "Wallet Core is responsible for the transactions")
-  Container(balance_service, "Balance Microservice", "Typescrit", "Returns customer balance")
-  Container(statement_service, "Statement Microservice", "Typescrit", "Returns customer statement")
-  Container(payment_acl, "Payment ACL", "Typescrit", "Anti Corruption Layer for payment gateway")
+  Container(wallet_core, "Wallet Core", "Golang", "Wallet Core is responsible for the transactions")
+  Container(balance_service, "Balance Microservice", "Golang", "Returns customer balance")
+  Container(statement_service, "Statement Microservice", "Golang", "Returns customer statement")
+  Container(payment_acl, "Payment ACL", "Golang", "Anti Corruption Layer for payment gateway")
 
   ContainerDb(wallet_core_db, "Wallet DB", "MySQL")
   Rel(wallet_core, wallet_core_db, "Uses", "MySQL Driver")
